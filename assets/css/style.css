@@ -1,0 +1,11 @@
+#page {
+    display-grid;
+    width: 100%;
+    grid-template-areas: "head           head"
+                         "user-selection retrieved-content"
+                         "footer         footer";
+}
+
+.footer {
+    
+}
