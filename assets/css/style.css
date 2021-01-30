@@ -1,0 +1,48 @@
+:root {
+    --background:#6f82fc;
+    --title: pink;
+    --accent:#FCD656;
+}   
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.hero-body {
+    background-color: var(--background);
+}
+
+.hero-body h1 {
+    font-size: 78px;
+    color: var(--title);
+}
+
+.hero-body h2 {
+    color: var(--accent);
+}
+
+.tile {
+    background-color: var(--background);
+}
+
+.title {
+    color: var(--title);
+}
+
+.subtitle {
+    color: var(--accent);
+}
+
+.content {
+    color: var(--accent);
+}
+
+@media screen and (max-width: 980px) {
+
+    .hero-body h1 {
+        font-size: 48px;
+    }
+}
