@@ -1,6 +1,6 @@
 // Create global variable for each button that captures their value
 // TO DO: need to update the querySelector using the html class of btns
-var dogBtnValue = document.querySelector('.classofallthebuttons').value;
+var dogBtnValue = document.querySelector(button).value;
 
 // API 1 - giphy
 function gifFunction() {  
@@ -32,14 +32,14 @@ function gifFunction() {
 function wikiFunction() {
   fetch(
     // Make a fetch request to Wikipedia; 
-    // TO DO: update with dogBtnValue var so it returns that instead of a
+    // TO DO: update with dogBtnValue var so it returns that instead of random
     'https://en.wikipedia.org/w/api.php?action=query&format=json&list=random&rnnamespace=0&rnlimit=1&origin=*'
   )
     .then(function(wikiResponse) {
       return wikiResponse.json();
     })
     .then(function(wikiResponse) {
-      // TO DO: go over this line; Create a variable to hold the title of the Wikipedia article
+      // TO DO: go over this line -- Create a variable to hold the title of the Wikipedia article
       var searchTerm = wikiResponse.query.random[0].title;
 
       // Display the article title above the GIF as a <h2> heading
