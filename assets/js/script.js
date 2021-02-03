@@ -1,6 +1,12 @@
 // Create global variable for each button that captures their value
 // TO DO: need to update the querySelector using the html class of btns
-var dogBtnValue = document.querySelector(button).value;
+var dogBtn = document.querySelector('button')
+console.log(dogBtn)
+var dogBtnValue = document.querySelector('button').value;
+
+
+dogBtn.addEventListener('click', gifFunction)
+dogBtn.addEventListener('click', wikiFunction)
 
 // API 1 - giphy
 function gifFunction() {  
@@ -14,7 +20,7 @@ function gifFunction() {
       })
       .then(function(response) {
         console.log(response.data[0]);
-        // TO DO: UPDATE W/ CORRECT HTML: a variable that will select the <div> where the GIF will be displayed
+        // DONE: a variable that will select the <div> where the GIF will be displayed
         var responseContainerEl = document.querySelector('#gif-response-container');
   
         // Empty out the <div> before we append a GIF to it
@@ -28,22 +34,23 @@ function gifFunction() {
       });
   }
 
-// API 2 - wikipedia 
+// // API 2 - wikipedia 
 function wikiFunction() {
-  fetch(
-    // Make a fetch request to Wikipedia; 
-    // TO DO: update with dogBtnValue var so it returns that instead of random
-    'https://en.wikipedia.org/w/api.php?action=query&format=json&list=random&rnnamespace=0&rnlimit=1&origin=*'
-  )
+  var dogBreed = "shiba"
+  var wikiUrl = 'https://en.wikipedia.org/w/api.php?action=query&format=json&titles=' + dogBreed + 'rnnamespace=0&rnlimit=1&origin=*'
+  console.log(wikiUrl)
+
+  fetch(wikiUrl)
+
     .then(function(wikiResponse) {
       return wikiResponse.json();
     })
     .then(function(wikiResponse) {
       // TO DO: go over this line -- Create a variable to hold the title of the Wikipedia article
-      var searchTerm = wikiResponse.query.random[0].title;
+      var dogBreedWiki = wikiResponse.query.random[0].title;
 
-      // Display the article title above the GIF as a <h2> heading
-      var responseHeaderEl = document.querySelector('#response-header');
-      responseHeaderEl.innerHTML = '<h2>' + searchTerm + '</h2>';
-
-      var rating = document.getElementById('rating').value;
+      // Display the article title below the GIF as a <h2> heading
+      var responseHeaderEl = document.querySelector('#wiki-header');
+      responseHeaderEl.innerHTML = '<h2>' + dogBreedWiki + '</h2>';
+    });
+  }
