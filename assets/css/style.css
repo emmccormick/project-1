@@ -18,6 +18,7 @@ body {
 
 .hero-body {
     background-color: var(--background);
+    border-bottom: 2px solid var(--accent);
 }
 
 .hero-body h1 {
@@ -31,6 +32,10 @@ body {
 
 .tile {
     background-color: var(--background);
+}
+/* add a setransparent shodow to the tiles */
+.card-shadow {
+    box-shadow: 5px 5px rgba(0, 0, 0, 50);
 }
 
 .paw-bg {
