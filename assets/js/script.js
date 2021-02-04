@@ -1,6 +1,12 @@
 // Create global variable for each button that captures their value
 // TO DO: need to update the querySelector using the html class of btns
-var dogBtnValue = document.querySelector(button).value;
+var dogBtn = document.querySelector('button')
+console.log(dogBtn)
+var dogBtnValue = document.querySelector('button').value;
+
+
+dogBtn.addEventListener('click', gifFunction)
+dogBtn.addEventListener('click', picFunction)
 
 // API 1 - giphy
 function gifFunction() {  
@@ -13,8 +19,8 @@ function gifFunction() {
         return response.json();
       })
       .then(function(response) {
-        console.log(response.data[0]);
-        // TO DO: UPDATE W/ CORRECT HTML: a variable that will select the <div> where the GIF will be displayed
+        //console.log(response.data[0]);
+        // DONE: a variable that will select the <div> where the GIF will be displayed
         var responseContainerEl = document.querySelector('#gif-response-container');
   
         // Empty out the <div> before we append a GIF to it
@@ -28,22 +34,29 @@ function gifFunction() {
       });
   }
 
-// API 2 - wikipedia 
-function wikiFunction() {
-  fetch(
-    // Make a fetch request to Wikipedia; 
-    // TO DO: update with dogBtnValue var so it returns that instead of random
-    'https://en.wikipedia.org/w/api.php?action=query&format=json&list=random&rnnamespace=0&rnlimit=1&origin=*'
-  )
-    .then(function(wikiResponse) {
-      return wikiResponse.json();
+// // API 2 - wikipedia 
+function picFunction() {
+  // using this dogBreed var as a placeholder to try and get the wiki api link to work
+  //var dogBreed = "shiba"
+  var pictureUrl = 'https://dog.ceo/api/breed/shiba/images'
+
+  console.log(pictureUrl)
+
+  fetch(pictureUrl)
+
+    .then(function(response) {
+      return response.json();
     })
-    .then(function(wikiResponse) {
-      // TO DO: go over this line -- Create a variable to hold the title of the Wikipedia article
-      var searchTerm = wikiResponse.query.random[0].title;
+    .then(function(response) {
+      console.log(response.message[0]);
+        // DONE: a variable that will select the <div> where the GIF will be displayed
+        var picResponseContainerEl = document.querySelector('#pic-response-container');
+    
+        var picImg = document.createElement('img');
+        picImg.setAttribute('src', response.message[0]);
+  
+        // Append 'picImg' to the <div>
+        picResponseContainerEl.appendChild(picImg);
+    });
+  }
 
-      // Display the article title above the GIF as a <h2> heading
-      var responseHeaderEl = document.querySelector('#response-header');
-      responseHeaderEl.innerHTML = '<h2>' + searchTerm + '</h2>';
-
-      var rating = document.getElementById('rating').value;

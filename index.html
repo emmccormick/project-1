@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title> Favorite Dog's around the World </title>
+    <title> Who Let the Dogs Out </title>
 </head>
 
 <body>
     <section class="hero is-family-monospace pb-5">
         <div class="hero-body">
-            <h1 class="title has-text-centered is-spaced is-uppercase has-text-weight-bold"> Popular Dogs </h1>
-            <h2 class="subtitle has-text-centered is-size-3 has-text-weight-medium"> Checkout What Dogs are popular
-                Around the World</h2>
+            <h1 class="title has-text-centered is-spaced is-uppercase has-text-weight-bold"> Who Let the Dogs Out </h1>
+            <h2 class="subtitle has-text-centered is-size-3 has-text-weight-medium"> ❤️ Dogs Galore ❤️ </h2>
         </div>
     </section>
 
@@ -22,14 +21,14 @@
         <div class="tile">
             <div class="paw-bg tile is-parent is-vertical pl-4 py-2 has-background-white">
                 <article class="tile is-child box">
-                    <p class="title is-size-2">What is your Favorite Dog?</p>
+                    <p class="title is-size-2"> What Dog is Right for YOU ⁉️ 🐕 </p>
                     <p class="subtitle">Click on the Dogs below to get more info.</p>
 
-                    <ul>
+ <ul>
                         <li>
-                            <button value="Shiba inu" onclick=""
+                            <button onclick=""
                                 class="dog-button button has-background-grey-light has-text-black has-text-weight-medium is-medium is-inverted is-outlined"
-                                value="" type="submit">
+                                value="shiba inu" type="submit">
                                 <img class="column btn-img"
                                     src="https://api.creativecommons.engineering/v1/thumbs/389c1220-009b-4951-90a2-21053e6f119a"
                                     alt="" srcset="">
@@ -39,9 +38,9 @@
                         </li>
                         <br>
                         <li>
-                            <button value="Alaskan Husky" onclick=""
+                            <button onclick=""
                                 class="dog-button button has-background-grey-light has-text-black has-text-weight-medium is-medium is-inverted is-outlined"
-                                value="" type="submit">
+                                value="husky" type="submit">
                                 <img class="column btn-img"
                                     src="https://api.creativecommons.engineering/v1/thumbs/6eeb98b6-006d-4d5f-bd60-18ae76feeed3"
                                     alt="An Alaskin Husky smiling." srcset="">
@@ -50,7 +49,7 @@
                         </li>
                         <br>
                         <li>
-                            <button value="Blue French Bulldog" onclick=""
+                            <button onclick=""
                                 class="dog-button button has-background-grey-light has-text-black has-text-weight-medium is-medium is-inverted is-outlined"
                                 value="" type="submit">
                                 <img class="column btn-img"
@@ -61,7 +60,7 @@
                         </li>
                         <br>
                         <li>
-                            <button value="Chihuahua" onclick=""
+                            <button onclick=""
                                 class="dog-button button has-background-grey-light has-text-black has-text-weight-medium is-medium is-inverted is-outlined"
                                 value="" type="submit">
                                 <img class="column btn-img"
@@ -72,7 +71,7 @@
                         </li>
                         <br>
                         <li>
-                            <button value="Corgi" onclick=""
+                            <button onclick=""
                                 class="dog-button button has-background-grey-light has-text-black has-text-weight-medium is-medium is-inverted is-outlined"
                                 value="" type="submit">
                                 <img class="column btn-img"
@@ -83,7 +82,7 @@
                         </li>
                         <br>
                         <li>
-                            <button value="German Shepard" onclick=""
+                            <button onclick=""
                                 class="dog-button button has-background-grey-light has-text-black has-text-weight-medium is-medium is-inverted is-outlined"
                                 value="" type="submit">
                                 <img class="column btn-img"
@@ -94,7 +93,7 @@
                         </li>
                         <br>
                         <li>
-                            <button value="Chow Chow" onclick=""
+                            <button onclick=""
                                 class="dog-button button has-background-grey-light has-text-black has-text-weight-medium is-medium is-inverted is-outlined"
                                 value="" type="submit">
                                 <img class="column btn-img"
@@ -105,7 +104,7 @@
                         </li>
                         <br>
                         <li>
-                            <button value="Golden Retriever" onclick=""
+                            <button onclick=""
                                 class="dog-button button has-background-grey-light has-text-black has-text-weight-medium is-medium is-inverted is-outlined"
                                 value="" type="submit">
                                 <img class="column btn-img"
@@ -116,7 +115,7 @@
                         </li>
                         <br>
                         <li>
-                            <button value="Pug" onclick=""
+                            <button onclick=""
                                 class="dog-button button has-background-grey-light has-text-black has-text-weight-medium is-medium is-inverted is-outlined"
                                 value="" type="submit">
                                 <img class="column btn-img" src="https://live.staticflickr.com/1/1126630_2d6a2caf67.jpg"
@@ -126,7 +125,7 @@
                         </li>
                         <br>
                         <li>
-                            <button value="Beagle" onclick=""
+                            <button onclick=""
                                 class="dog-button button has-background-grey-light has-text-black has-text-weight-medium is-medium is-inverted is-outlined"
                                 value="" type="submit">
                                 <img class="column btn-img"
@@ -139,18 +138,17 @@
 
                 </article>
             </div>
-
+        
             <div class="paw-bg tile is-parent px-2 py-2 has-background-white">
                 <article class="tile is-child box">
-                    <figure class="image is-3by3">
+            
+                    <figure id="gif-response-container" class="image is-3by3">
                         <img id="image" src="./assets/Images/Dogs.jpg">
                     </figure>
-                    <div class="is-size-4 title"> Opening Paragraph </div>
+
+                    <div class="is-size-4 title" id="pic-response-container">  </div>
                     <div id="info-link" class="content">
-                        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                            Quia suscipit harum facilis commodi voluptatem!
-                            Ducimus mollitia facere ipsam officia ipsum porro eos sed fuga?
-                            Commodi molestias quia temporibus placeat maiores.</p>
+                        <p> Read more about this breed on Wikipedia!</p>
                         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Dolores distinctio illo similique velit cumque? Magni in,
                             reiciendis numquam placeat molestias perferendis vel non tempore ut quo itaque inventore
