@@ -6,7 +6,7 @@ var dogBtnValue = document.querySelector('button').value;
 
 
 dogBtn.addEventListener('click', gifFunction)
-dogBtn.addEventListener('click', wikiFunction)
+dogBtn.addEventListener('click', picFunction)
 
 // API 1 - giphy
 function gifFunction() {  
@@ -19,7 +19,7 @@ function gifFunction() {
         return response.json();
       })
       .then(function(response) {
-        console.log(response.data[0]);
+        //console.log(response.data[0]);
         // DONE: a variable that will select the <div> where the GIF will be displayed
         var responseContainerEl = document.querySelector('#gif-response-container');
   
@@ -35,22 +35,27 @@ function gifFunction() {
   }
 
 // // API 2 - wikipedia 
-function wikiFunction() {
-  var dogBreed = "shiba"
-  var wikiUrl = 'https://en.wikipedia.org/w/api.php?action=query&format=json&titles=' + dogBreed + 'rnnamespace=0&rnlimit=1&origin=*'
-  console.log(wikiUrl)
+function picFunction() {
+  // using this dogBreed var as a placeholder to try and get the wiki api link to work
+  //var dogBreed = "shiba"
+  var pictureUrl = 'https://dog.ceo/api/breed/shiba/images'
 
-  fetch(wikiUrl)
+  console.log(pictureUrl)
 
-    .then(function(wikiResponse) {
-      return wikiResponse.json();
+  fetch(pictureUrl)
+
+    .then(function(response) {
+      return response.json();
     })
-    .then(function(wikiResponse) {
-      // TO DO: go over this line -- Create a variable to hold the title of the Wikipedia article
-      var dogBreedWiki = wikiResponse.query.random[0].title;
-
-      // Display the article title below the GIF as a <h2> heading
-      var responseHeaderEl = document.querySelector('#wiki-header');
-      responseHeaderEl.innerHTML = '<h2>' + dogBreedWiki + '</h2>';
+    .then(function(response) {
+      console.log(response.message[0]);
+        // DONE: a variable that will select the <div> where the GIF will be displayed
+        var picResponseContainerEl = document.querySelector('#pic-response-container');
+    
+        var picImg = document.createElement('img');
+        picImg.setAttribute('src', response.message[0]);
+  
+        // Append 'picImg' to the <div>
+        picResponseContainerEl.appendChild(picImg);
     });
   }
