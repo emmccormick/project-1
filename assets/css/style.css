@@ -2,13 +2,18 @@
     --background:#6f82fc;
     --title: pink;
     --accent:#FCD656;
+    --cc-background-image: url(https://api.creativecommons.engineering/v1/thumbs/469360dd-d82e-4b15-afe8-349e6dc72aa9);
+    --cc-dog-bone-outline: url(/assets/Images/kissclipart-dog-bone-svg-clipart-dog-clip-art-4b862539aeafeffd.png);
 }   
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+}
+
+body {
+    background-image: var(--cc-background-image);
 }
 
 .hero-body {
@@ -26,6 +31,37 @@
 
 .tile {
     background-color: var(--background);
+}
+
+.paw-bg {
+    background-image: var(--cc-background-image);
+}
+
+li > button {
+    display: grid;
+    grid-template-columns: 95px auto auto auto auto;
+    width: 95%;
+    justify-content: start;
+}
+
+.btn-img {
+    max-width: 75px;
+    max-height: 70px;
+    border: 3px solid var(--accent);
+    border-radius: 50px;
+    padding: 0px;
+}
+
+.shiba-inu-icon {
+    background-image: url(https://live.staticflickr.com/8505/8526324984_5dcd9ef27f_b.jpg);
+}
+.corgi-icon {
+    background-image: url(https://live.staticflickr.com/8505/8526324984_5dcd9ef27f_b.jpg);
+}
+
+li > button > p {
+    grid-column: 1 / span 5;
+  
 }
 
 .title {
