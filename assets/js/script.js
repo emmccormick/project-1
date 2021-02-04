@@ -59,4 +59,3 @@ function picFunction() {
         picResponseContainerEl.appendChild(picImg);
     });
   }
-
